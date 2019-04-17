@@ -37,7 +37,8 @@ void rcv_cb(struct ev_loop *loop, struct ev_io *watcher, int revents){
         recv_total += recv_len;
     }
     
-    printf("Total size of received file = %d\n", recv_total);
+    printf("\rTotal size of received file = %d", recv_total);
+    fflush(stdout);
     free(buffer);
 }
 
@@ -73,6 +74,7 @@ int main(void){
     int nRecvBuf=1000*1024;         
     setsockopt(receiver.sock_fd, SOL_SOCKET, SO_RCVBUF, (const char*)&nRecvBuf, sizeof(int));
     
+    printf("Ready to receive packet !\n");
     ev_io_init(&(receiver.server_io), rcv_cb, receiver.sock_fd, EV_READ);
     ev_io_start(loop, &(receiver.server_io));
 
