@@ -56,7 +56,7 @@ int main(void){
         memset(array, 0, buflen);
         usleep(100);
     }
-    printf("End of the file ! Entire file is sent !\n");
+    printf("End of the file ! Entire file has been sent !\n");
     printf("The size of file is %ld \n", ftell(txtptr));
 
     free(array);
