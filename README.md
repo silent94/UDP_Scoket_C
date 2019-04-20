@@ -1,4 +1,4 @@
-# Example of UDP packet trasmission with libev 
+# Example of UDP packet transmission with libev 
 [![Build Status](https://travis-ci.org/silent94/UDP_Scoket_C.svg?branch=master)](https://travis-ci.org/silent94/UDP_Scoket_C)
 [![License: MIT](https://img.shields.io/github/license/silent94/UDP_Scoket_C.svg?style=popout)](https://opensource.org/licenses/MIT)
 
