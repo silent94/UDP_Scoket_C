@@ -14,14 +14,13 @@ typedef struct receiver{
     int sock_fd;
 }RECEIVER_IO;
 
-int recv_total = 0;
-
 void rcv_cb(struct ev_loop *loop, struct ev_io *watcher, int revents){
     if(EV_ERROR & revents){
         perror("got invalid event");
         return;
     }
     
+    static int recv_total = 0;
     int recv_len = 0;
     int buflen = 1024;
     struct sockaddr_in sender;
